@@ -1,0 +1,135 @@
+html, body, #container{width:100%; height:100%; margin:0; padding:0;}
+#main {
+	position:absolute;
+	left:0;
+	top:0;
+	background:#FFFFCF;
+	width:100%;
+	min-height:100%;
+	}
+
+#mypanel {
+	height:100%;
+	position:relative;
+	width:70%;
+	max-width:250px;
+	background:blue;
+	left:0;
+	top:0;
+	float:left;
+	z-index:0;
+}
+#header {
+	height:40px;
+	background:#47FF34;
+}
+#header h3 {
+	display:inline;
+}
+#contentouter {
+	padding:10px;
+	display:inline;
+	width:100%;
+
+}
+#content{
+
+
+}
+
+#set .ui-input-text {margin:.4em 0;}
+/*timetable.php*/
+div.tage {width:17%;
+float:left;
+border-left:thin solid #C0C0C0;
+border-right:thin solid #C0C0C0;
+}
+div.stunden {
+	height:60px;
+	margin:2px;
+}
+div.erst.zweitex, div.zweit {
+	width:50%;
+	float:left;
+	height:100%;
+}
+div.stunden p {
+	font-size:small;
+	text-align:center;
+	text-shadow:none;
+	font-family:Arial, Helvetica, sans-serif;
+}
+div.stunden p.raum {
+	font-size: xx-small;
+}
+div.fach0.stunden p {display:none;}
+
+div.tage.stundenanzeige {width:10%;max-width:40px;}
+.fachma {background:#FF0000}
+.fachde {background:#D2C1FF}
+.fachen {background:#47FF34}
+.fachfr {background:#3DADE8}
+.fachla {background:#FFFFCF}
+.fachsn {background:#FF2214}
+.fachku {background:#FFE234}
+.fachmu {background:#FF4A86}
+.fachge {background:#52E8D3}
+.fachsk {background:#FF9FA9}
+.fachgg {background:#5E3D14}
+.fachph {background:#BF5CE8}
+.fachbi {background:#69FF61}
+.fachch {background:#FFC55B}
+.fachas {background:#FF1DEA}
+.fachwe {background:#FF9335}
+.facheth {background:#E8B75E}
+.fachre {background:#856935}
+.fachif {background:#8BE8D5}
+.fachwr {background:#856858}
+.fachwrt {background:#D16FFF}
+.fachsp {background:#004CFF}
+.fachmnt {background:#7EFFC9}
+.fachnt {background:#468C6E}
+div.stunden p {
+	margin:0;
+}
+
+/*newtimetable.php*/
+div.tage {width:17%;
+float:left;
+border-left:thin solid #C0C0C0;
+border-right:thin solid #C0C0C0;
+}
+div.stundeneintragung {
+	height:150px;
+	margin:0 2px;
+}
+div.stunden p {
+	font-size:small;
+	text-align:center;
+	text-shadow:none;
+	font-family:Arial, Helvetica, sans-serif;
+}
+div.stundeneintragung p {
+	margin:0;
+}
+div.ersteintragung, div.zweiteintragung {
+	width:90%;
+	height:44%;
+	float:none;
+	padding:2% 5%;
+}
+div.zweiteintragung {
+	background:#D3D3D3;
+}
+select.stundeneintragungeinzeln {
+	width:90%;
+	margin-top:10px;
+}
+input.raumeintragung {
+	width:90%;
+}
+div.fach0.stunden p {display:none;}
+
+
+
+

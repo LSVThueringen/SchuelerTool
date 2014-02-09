@@ -1,0 +1,39 @@
+	<script>
+		$('#stundenplan').empty();
+		
+	
+			var tage = new Array ('mo', 'di', 'mi', 'do', 'fr');
+			var stunden = new Array ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10');
+			var Ausgabe = "";
+			Ausgabe = Ausgabe + '<div class="tage stundenanzeige"><div class="stunden"><p>0.</p></div><div class="stunden"><p>1.</p></div><div class="stunden"><p>2.</p></div>';
+			Ausgabe = Ausgabe + '<div class="stunden"><p>3.</p></div><div class="stunden"><p>4.</p></div><div class="stunden"><p>5.</p></div><div class="stunden"><p>6.</p></div>';
+			Ausgabe = Ausgabe + '<div class="stunden"><p>7.</p></div><div class="stunden"><p>8.</p></div><div class="stunden"><p>9.</p></div><div class="stunden"><p>10.</p></div></div>';
+		
+			for (var count1 = 0; count1 < tage.length; count1++){
+				Ausgabe = Ausgabe + '<div id="' + tage[count1] + '" class="tage">';
+				for (var count2 = 0; count2 < stunden.length; count2++){
+					var tagst = tage[count1] + stunden[count2];
+					var tagst2 = tagst + 'r';
+					var tagst3 = tagst + 'z';
+					var tagst4 = tagst + 'zr';
+					Ausgabe = Ausgabe + '<div class="' + tagst + ' fach' + localStorage.getItem(tagst) + ' stunden">';
+					if(localStorage.getItem(tagst3) != "0"){var dritte = "zweitex";}else{var dritte = "";}
+					Ausgabe = Ausgabe + '<div class="erst ' + dritte + '">';
+					Ausgabe = Ausgabe + '<p>' + localStorage.getItem(tagst) + '</p><p class="raum">' + localStorage.getItem(tagst2) + '</p></div>';
+					if(localStorage.getItem(tagst3)!='0'){
+						Ausgabe = Ausgabe + '<div class="' + tagst3 + ' fach' + localStorage.getItem(tagst3) + ' zweit">';
+						Ausgabe = Ausgabe + '<p>' + localStorage.getItem(tagst3) + '</p>';
+						Ausgabe = Ausgabe + '<p class="raum">' + localStorage.getItem(tagst3) + '</p></div>';
+					}
+				Ausgabe = Ausgabe + '</div>';
+				}
+			Ausgabe = Ausgabe + '</div>';
+			}
+			
+			$("#stundenplan").append(Ausgabe);
+    </script>
+
+	<div id="stundenplan">
+
+	</div>
+	<a href="#newtimetable" class="navlink">Stundenplan bearbeiten</a>

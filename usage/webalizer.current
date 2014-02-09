@@ -1,0 +1,232 @@
+# Webalizer V2.23-05 Incremental Data - 02/08/2014 22:48:16
+2014 2 8 22 48 16
+2813 1774 14 21 4 8 1504806 1731 25 0
+2 83 202 1 8
+713 477 333108 3 309 4
+443 225 371174 2 159 3
+243 142 242253 6 132 8
+83 44 34094 1 45 1
+7 7 4264 1 7 1
+0 0 0 0 0 0
+311 311 137936 2 311 4
+1013 568 381977 2 768 5
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+156 65 189963 61
+18 14 10247 10
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+6 6 1845 4
+42 42 39774 42
+24 15 18789 14
+40 31 39006 28
+100 64 81098 69
+118 105 88574 63
+87 74 49280 62
+145 104 94715 87
+218 168 87047 156
+391 244 123535 230
+199 81 56468 139
+541 349 162077 374
+180 99 82742 135
+288 175 180985 161
+260 138 198661 96
+0
+0
+0
+1774
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1011
+0
+0
+0
+0
+0
+0
+28
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/login.php
+0 51 37176656 4539 0 0
+/main.php
+0 831 0 1086308 12 7
+/tabelle.php
+0 4 0 80 0 0
+/pages/timetable
+0 1 0 433 0 0
+/api/login.php
+0 7 37195040 1096 0 0
+/pages/newtimetable.php
+0 5 0 12248 0 0
+/pages/main.html
+0 67 37194576 244 0 0
+/vplanparser.php
+0 17 0 3122 2 0
+/js/script.js
+1 345 0 16623 0 0
+/api/newtimetable.php
+0 60 37194928 13015 0 0
+/main.html
+0 38 37185872 3178 0 0
+/config.php
+0 1 37176544 28 0 0
+/css/style.css
+1 737 0 105172 0 0
+/test2.php
+0 39 0 4728 0 2
+/header.php
+0 3 37185952 354 0 0
+/pages/newtimetable.html
+0 27 37194800 23626 0 0
+/vplanparser
+0 3 0 417 0 0
+/pages/timetable.html
+0 39 37194688 7636 0 1
+/
+0 323 0 166190 11 0
+/api/update.php
+0 51 37195152 15116 0 0
+/update.php
+0 136 0 35504 0 1
+# End Of Table - urls
+# -sites- (monthly)
+p579e5bd3.dip0.t-ipconnect.de
+0 27 21 4825 2 1391469712
+/vplanparser
+89.204.138.227
+0 12 12 13433 1 1391429157
+/main.php
+p579e5158.dip0.t-ipconnect.de
+0 83 44 34094 1 1391548362
+/main.php
+p54b8b619.dip0.t-ipconnect.de
+0 27 27 25286 2 1391602951
+/main.php
+p579e5c55.dip0.t-ipconnect.de
+0 613 300 568994 3 1391440865
+/vplanparser.php
+89.204.154.153
+0 1 1 78 1 1391459053
+/main.php
+p579e5be4.dip0.t-ipconnect.de
+0 216 142 67970 1 1391298932
+/main.php
+ip-90-186-0-184.web.vodafone.de
+0 8 8 2546 1 1391422403
+/main.php
+ip-90-186-2-67.web.vodafone.de
+0 5 5 2529 1 1391363887
+/main.php
+ip-90-186-3-108.web.vodafone.de
+0 1 1 72 1 1391293643
+/main.php
+p579e5b04.dip0.t-ipconnect.de
+0 111 111 52358 2 1391799202
+/test2.php
+p579e481c.dip0.t-ipconnect.de
+0 496 334 265066 2 1391279993
+/main.php
+p579e4f55.dip0.t-ipconnect.de
+0 680 535 338536 5 1391885633
+/login.php
+p579e5895.dip0.t-ipconnect.de
+0 533 233 129019 2 1391899696
+/pages/timetable.html
+# End Of Table - sites (monthly)
+# -sites- (daily)
+p579e4f55.dip0.t-ipconnect.de
+0 480 335 252958 3 1391885633
+/login.php
+p579e5895.dip0.t-ipconnect.de
+0 533 233 129019 2 1391899696
+/pages/timetable.html
+# End Of Table - sites (daily)
+# -referrers- 
+http://tool.lsv-thueringen.de/
+1 677
+- (Direct Request)
+0 808
+http://tool.lsv-thueringen.de/index.php
+1 8
+http://tool.lsv-thueringen.de/main.php
+1 1320
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.102 Safari/537.36
+1 2534
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+1 49
+Browser: Firefox
+2 49
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.102 Safari/537.36
+1 20
+Mozilla/5.0 (Linux; Android 4.2.2; GT-P5110 Build/JDQ39E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Safari/5
+1 98
+Mozilla/5.0 (Linux; Android 4.3; C6603 Build/10.4.B.0.569) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile 
+0 13
+Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Mobile Sa
+0 82
+Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36
+1 7
+Browser: Safari
+2 2669
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.99 Safari/537.36
+1 10
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

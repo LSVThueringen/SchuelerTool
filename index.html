@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<title>SchuelerTool</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=1;width=device-width;"/>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script>
+			function update(){
+				str = 'klasse=' + localStorage.getItem('klasse') + '&username=' + localStorage.getItem('username') + '&time=' + localStorage.getItem('time');
+			    $.ajax({
+					type: "POST",
+					url: "api/update.php",
+					data: str,
+					success: function(data){
+						if(data){
+						var json = $.parseJSON(data);
+						$.each(json, function(key, value){
+							localStorage.setItem(key, value);
+			    			console.log(key + ' = ' + value);			    			
+						});
+						}
+			  		}
+			 });
+			};
+			function initialise(){
+			var content = $('#content');
+			// loading page content for navigation
+			$('.navlink').on('click', function(e){
+				
+				e.preventDefault();
+				var linkurl   = $(this).attr("href");
+				var linkhtmlurl = "pages/" + linkurl.substring(1, linkurl.length) + ".html";			
+				var imgloader  = '<center style="margin-top: 30px;"><img src="img/ajax-loader.gif" alt="loading..." /></center>';
+				closeme();
+				$(function() {
+					window.scrollTo(0, 1);
+				});
+				content.html(imgloader);					
+				content.load(linkhtmlurl);
+				});
+			};
+			function toggleFullScreen() {
+					var doc = window.document;
+					var docEl = doc.documentElement;
+			
+					var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+					var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+			
+					if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+					requestFullScreen.call(docEl);
+					}
+					else {
+					cancelFullScreen.call(doc);
+					}
+			};
+			function openme() {
+					$(function() {
+						$('#main').animate({
+							left : "250px"
+						}, {
+							duration : 300,
+							queue : false
+						});
+					});
+				};
+				function closeme() {
+					var closeme = $(function() {
+						$('#main').animate({
+							left : "0px"
+						}, {
+							duration : 180,
+							queue : false
+						});
+					});
+				};
+			
+			$(document).ready(function() {
+				toggleFullScreen();
+				var content = $('#content');
+				if(localStorage.getItem('login')!='1'){
+				Ausgabe = '<input name="username" id="username" placeholder="Username" /><input name="password" id="password" type="password" placeholder="Passwort" /><a data-role="button" id="submit">Senden</a>';
+				content.append(Ausgabe);
+				$('#submit').click(function() {
+					var usr = $('#username').val();
+					var pw = $('#password').val();
+					$.ajax({
+						type : "POST",
+						url : "api/login.php?m=login",
+						data : {
+							username : usr,
+							password : pw
+						},
+						success : function(data) {
+							var json = $.parseJSON(data);
+							$.each(json, function(key, value) {
+								localStorage.setItem(key, value);
+								console.log(key + ' = ' + value);
+							});
+							localStorage.setItem('time', '1');
+							update();
+						}
+					});
+					$('#content').load("pages/frontpage.html");});
+				} else {update(); $('#content').load("pages/frontpage.html"); }
+				
+				
+				$(".panelaction").on("click", function(e){
+					e.preventDefault();
+					var leftval = $('#main').css('left');
+					
+					if(leftval == "0px") {
+						openme();
+					}
+					else { 
+						closeme(); 
+					}
+				});
+				
+
+			initialise();	
+
+			});
+			$(document).ajaxComplete(function () {
+    			initialise();
+			});
+		</script>
+	</head>
+	<body>
+	<div id="container">
+		<div data-role="panel" id="mypanel">
+				<ul>
+					<li>
+						<a href="#frontpage" class="navlink">Startseite</a>
+					</li>
+					<li>
+						<a href="#timetable" class="navlink">Stundenplan</a>
+					</li>
+					<li>
+						<a href="#beamer" class="navlink">Beamer</a>
+					</li>
+					<li>
+						<a href="#vplan" class="navlink">Vertretungsplan</a>
+					</li>
+					<li>
+						<a href="#homework" class="navlink">Hausaufgaben</a>
+					</li>
+					<li>
+						<a href="#" class="panelaction">Schließen</a>
+					</li>
+				</ul>
+		</div><!-- /panel -->
+		<div data-role="page" id="main">
+			
+			<div id="header" data-role="header">
+				<h3>SchuelerTool</h3>
+				<a href="#mypanel" class="panelaction">Open</a>
+			</div>
+			<div id="contentouter">
+			<div id="content">
+				
+			</div>
+			</div>
+	</div>
+		
+
+	</body>
+</html>

@@ -1,0 +1,191 @@
+<script>
+
+
+
+
+
+var faecher = '<option value="0">Nichts</option><option value="ma">Mathe</option><option value="de">Deutsch</option><option value="en">Englisch</option><option value="fr">Französisch</option><option value="la">Latein</option>';
+var faecher = faecher + '<option value="sn">Spanisch</option><option value="ku">Kunst</option><option value="mu">Musik</option><option value="ge">Geschichte</option><option value="sk">Sozialkunde</option>';
+var faecher = faecher + '<option value="gg">Geografie</option><option value="ph">Physik</option><option value="bi">Biologie</option><option value="ch">Chemie</option><option value="as">Astronomie</option>';
+var faecher = faecher + '<option value="we">Werken</option><option value="eth">Ethik</option><option value="re">Religion</option><option value="if">Informatik</option><option value="wr">WR</option>';
+var faecher = faecher + '<option value="wrt">WRT</option><option value="sp">Sport</option><option value="mnt">MNT</option><option value="nt">NT</option>';
+var tage = new Array ('mo', 'di', 'mi', 'do', 'fr');
+var stunden = new Array ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10');
+var Ausgabe = "";
+Ausgabe = Ausgabe + '<div class="tage stundenanzeige"><div class="stundeneintragung"><p>0.</p></div><div class="stundeneintragung"><p>1.</p></div><div class="stundeneintragung"><p>2.</p></div>';
+			Ausgabe = Ausgabe + '<div class="stundeneintragung"><p>3.</p></div><div class="stundeneintragung"><p>4.</p></div><div class="stundeneintragung"><p>5.</p></div><div class="stundeneintragung"><p>6.</p></div>';
+			Ausgabe = Ausgabe + '<div class="stundeneintragung"><p>7.</p></div><div class="stundeneintragung"><p>8.</p></div><div class="stundeneintragung"><p>9.</p></div><div class="stundeneintragung"><p>10.</p></div></div>';
+for (var count1 = 0; count1 <= 4; count1++) {
+	Ausgabe = Ausgabe + '<div id="' + tage[count1] + '" class="tage">';
+	for (var count2 = 0; count2 <= 10; count2++) {
+		var tagst = tage[count1] + stunden[count2];
+		var tagst2 = tagst+'r';
+		var tagst3 = tagst+'z';
+		var tagst4 = tagst+'zr';
+		
+		Ausgabe = Ausgabe + '<div class="' + tagst + ' stundeneintragung"><div class="ersteintragung">';
+		if(localStorage.getItem(tagst)!='0'){var fach=localStorage.getItem(tagst);}else{var fach = '0';}			
+		Ausgabe = Ausgabe + '<select name="'+tagst+'" class="stundeneintragungeinzeln fach'+fach+'">';
+		if(fach!='0'){
+			Ausgabe = Ausgabe + '<option value="'+fach+'">'+fach+'</option>';}
+		else {
+			Ausgabe = Ausgabe + '<option value="0">'+stunden[count2]+'. Stunde</option>';
+		}
+		Ausgabe = Ausgabe + faecher + '</select>';
+		if(localStorage.getItem(tagst2)!='0'){var raum=localStorage.getItem(tagst2);}else{var raum='Raum';}
+		Ausgabe = Ausgabe + '<input name="'+tagst2+'" class="raumeintragung" value="'+raum+'"/></div>';
+		Ausgabe = Ausgabe + '<div class="'+tagst3+' zweiteintragung">';
+			if(localStorage.getItem(tagst3)!='0'){var fach2=localStorage.getItem(tagst3);}else{var fach2 = '0';}
+			Ausgabe = Ausgabe + '<select name="'+tagst3+'" class="stundeneintragungeinzeln fach'+fach2+'">';
+			if(fach2!='0'){
+				Ausgabe = Ausgabe + '<option value="'+fach2+'">'+fach2+'</option>';}
+			else {
+				Ausgabe = Ausgabe + '<option value="0">'+stunden[count2]+'. Alternativ</option>';
+			}
+		Ausgabe = Ausgabe + faecher + '</select>';
+		if(localStorage.getItem(tagst4)!='0'){var raum2=localStorage.getItem(tagst4);}else{var raum2 = 'Raum Alternativ';}
+		Ausgabe = Ausgabe + '<input name="'+tagst4+'" class="raumeintragung" value="'+raum2+'"/></div></div>';
+
+		}
+
+	Ausgabe = Ausgabe + '</div>';
+
+	}
+Ausgabe = Ausgabe + '</div><a href="#" id="submit">Absenden</a></form>';
+$("#stundenplan").append(Ausgabe);
+
+
+function tauschen(element, str) {
+
+		$(element).change(function() {
+			$(this).removeClass(str);
+			$('option:selected', $(this)).each(function() {
+				var fach = ($(this).val());	
+				var klasse = "fach";
+				klasse += fach;
+				$(element).addClass(klasse);
+			});
+		});
+
+		/*$(element).addClass(str2);*/
+	}
+
+
+	
+
+	$('select.stundeneintragungeinzeln').click(function() {
+		if ($(this).hasClass("fachma")) {
+			var str = "fachma";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachde")) {
+			var str = "fachma";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachde")) {
+			var str = "fachde";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachen")) {
+			var str = "fachen";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachfr")) {
+			var str = "fachfr";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachla")) {
+			var str = "fachla";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachsn")) {
+			var str = "fachsn";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachku")) {
+			var str = "fachku";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachmu")) {
+			var str = "fachmu";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachge")) {
+			var str = "fachge";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachsk")) {
+			var str = "fachsk";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachgg")) {
+			var str = "fachgg";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachph")) {
+			var str = "fachph";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachbi")) {
+			var str = "fachbi";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachch")) {
+			var str = "fachch";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachas")) {
+			var str = "fachas";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachwe")) {
+			var str = "fachwe";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("facheth")) {
+			var str = "facheth";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachre")) {
+			var str = "fachre";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachif")) {
+			var str = "fachif";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachwr")) {
+			var str = "fachwr";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachwrt")) {
+			var str = "fachwrt";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachsp")) {
+			var str = "fachsp";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachmnt")) {
+			var str = "fachmnt";
+			tauschen($(this), str);
+		} else if ($(this).hasClass("fachnt")) {
+			var str = "fachnt";
+			tauschen($(this), str);
+		} else {
+			var str = "";
+			tauschen($(this), str);
+		}
+
+	});
+
+
+$('#submit').click(function(e){
+	var str = $('#stundenplan :input').serialize();
+	str = str + '&klasse=' + localStorage.getItem('klasse') + '&username=' + localStorage.getItem('username') + '&time=' + localStorage.getItem('time');
+    e.preventDefault();
+    $.ajax({
+		type: "POST",
+		url: "api/newtimetable.php",
+		data: str,
+		success: function(data){
+			if(data){
+			var json = $.parseJSON(data);
+			$('#stundenplan').html(json.answercontent);
+			initialise();
+			update();
+			}
+  		}
+	});
+ });
+
+
+
+
+</script>
+
+
+	<div id="stundenplan">
+
+	</div>
+
+
+
+

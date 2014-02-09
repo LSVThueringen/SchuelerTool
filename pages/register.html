@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<title>SchuelerTool</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.submitregister').click(function() {
+					var str = $('#registerform :input').serialize();
+					$.ajax({
+						type : "POST",
+						url : "/api/login.php?m=register",
+						data : str,
+						success : function(data) {
+							alert('123');
+							var json = $.parseJSON(data);
+							$('#registerform').html(json.answer);
+
+						}
+					});
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="registerform">
+			<label>
+				Vorname:
+			</label>
+			<input type="text" name="firstname" id="firstname"/>
+			<br />
+			<label>
+				Nachname:
+			</label>
+			<input type="text" name="lastname" id="lastname"/>
+			<br />
+			<label>
+				Username (min. 6 Zeichen):
+			</label>
+			<input type="text" name="username" id="username"/>
+			<br />
+			<label>
+				Klasse (bitte im Format 05b, 10a bzw. A14 angeben):
+			</label>
+			<input type="text" name="grade" id="grade"/>
+			<br />
+			<label>
+				Klassenpasswort (erhältst du von deinen Mitschülern):
+			</label>
+			<input type="text" name="gradepass" id="gradepass"/>
+			<br />
+			<label>
+				Passwort (min. 6 Zeichen):
+			</label>
+			<input type="password" name="pw" id="pw"/>
+			<br />
+			<label>
+				Passwort wiederholen (min. 6 Zeichen):
+			</label>
+			<input type="password" name="pw2" id="pw2"/>
+
+			<a href="#" class="submitregister">Registrieren</a>
+		</div>
+
+	</body>
+</html>
+

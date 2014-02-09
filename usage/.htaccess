@@ -1,0 +1,7 @@
+RewriteEngine off
+DirectoryIndex webalizer.html
+AuthUserFile /www/htdocs/lsvthude//tool/usage//.htpasswd
+AuthGroupFile /dev/null
+AuthName 'ByPassword'
+AuthType Basic
+require valid-user

@@ -11,7 +11,7 @@
 					var str = $('#registerform :input').serialize();
 					$.ajax({
 						type : "POST",
-						url : "/api/login.php?m=register",
+						url : "http://tool.lsv-thueringen.de//api/login.php?m=register",
 						data : str,
 						success : function(data) {
 							alert('123');

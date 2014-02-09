@@ -15,7 +15,7 @@
 				str = 'klasse=' + localStorage.getItem('klasse') + '&username=' + localStorage.getItem('username') + '&time=' + localStorage.getItem('time');
 			    $.ajax({
 					type: "POST",
-					url: "api/update.php",
+					url: "http://tool.lsv-thueringen.de/api/update.php",
 					data: str,
 					success: function(data){
 						if(data){
@@ -91,7 +91,7 @@
 					var pw = $('#password').val();
 					$.ajax({
 						type : "POST",
-						url : "api/login.php?m=login",
+						url : "http://tool.lsv-thueringen.de/api/login.php?m=login",
 						data : {
 							username : usr,
 							password : pw

@@ -163,7 +163,7 @@ $('#submit').click(function(e){
     e.preventDefault();
     $.ajax({
 		type: "POST",
-		url: "api/newtimetable.php",
+		url: "http://tool.lsv-thueringen.de/api/newtimetable.php",
 		data: str,
 		success: function(data){
 			if(data){
